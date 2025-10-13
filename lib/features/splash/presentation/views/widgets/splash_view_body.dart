@@ -1,5 +1,10 @@
 import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/core/utils/constants.dart';
+import 'package:bookly/features/home/presentation/views/home_view.dart';
+import 'package:bookly/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/utils.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -16,17 +21,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
-
-    slidingAnimation = Tween<Offset>(
-      begin: const Offset(0, 8),
-      end: Offset.zero,
-    ).animate(animationController);
-
-    animationController.forward();
+    initSlidingAnimation();
+    splashHomeNavigation();
   }
 
   @override
@@ -43,11 +39,32 @@ class _SplashViewBodyState extends State<SplashViewBody>
       spacing: 6,
       children: [
         Image.asset(AssetsData.logo),
-        SlideTransition(
-          position: slidingAnimation,
-          child: Text("Read Free Books", textAlign: TextAlign.center),
-        ),
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    );
+
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, 8),
+      end: Offset.zero,
+    ).animate(animationController);
+
+    animationController.forward();
+  }
+
+  void splashHomeNavigation() {
+    Future.delayed(Duration(milliseconds: 2500), () {
+      Get.to(
+        () => HomeView(),
+        transition: Transition.fade,
+        duration: kTransitionDuration,
+      );
+    });
   }
 }
