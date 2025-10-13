@@ -6,6 +6,7 @@ class AppColors {
 
 class AppThemes {
   static ThemeData theme = ThemeData(
+    brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.bgPrimaryColors,
   );
 }
