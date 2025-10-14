@@ -1,12 +1,12 @@
+import 'package:bookly/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class AppColors {
-  static const kPrimaryColors = Color(0xff100B20);
-}
-
-class AppThemes {
+abstract class AppThemes {
   static ThemeData theme = ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: AppColors.kPrimaryColors,
+    scaffoldBackgroundColor: kPrimaryColor,
+    textTheme: TextTheme(
+      titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+    ),
   );
 }
