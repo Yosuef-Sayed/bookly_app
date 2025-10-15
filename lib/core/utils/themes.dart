@@ -6,10 +6,35 @@ abstract class AppThemes {
   static ThemeData theme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: kPrimaryColor,
-    textTheme: GoogleFonts.montserratTextTheme(
-      ThemeData.dark().textTheme.copyWith(
-        titleMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+    textTheme: ThemeData.dark().textTheme.copyWith(
+      titleMedium: GoogleFonts.montserrat(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
       ),
+      bodyLarge: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.normal,
+        fontFamily: kGTSectraFine,
+      ),
+      bodyMedium: GoogleFonts.montserrat(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: Color.fromARGB(155, 255, 255, 255),
+      ),
+      labelLarge: GoogleFonts.montserrat(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      labelMedium: GoogleFonts.montserrat(
+        fontSize: 16,
+        fontWeight: FontWeight.normal,
+      ),
+      labelSmall: GoogleFonts.montserrat(
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
+        color: Color.fromARGB(155, 255, 255, 255),
+      ),
+      titleLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     ),
   );
 }

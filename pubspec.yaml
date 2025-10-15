@@ -26,3 +26,8 @@ flutter:
   assets:
     - assets/images/logos/
     - assets/images/
+
+  fonts:
+    - family: Sectra
+      fonts:
+        - asset: assets/fonts/GT-Sectra-Fine-Regular-Trial.otf
