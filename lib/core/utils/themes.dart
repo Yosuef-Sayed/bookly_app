@@ -19,7 +19,7 @@ abstract class AppThemes {
       bodyMedium: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        color: Color.fromARGB(155, 255, 255, 255),
+        color: Color.fromARGB(160, 255, 255, 255),
       ),
       labelLarge: GoogleFonts.montserrat(
         fontSize: 20,
@@ -32,7 +32,7 @@ abstract class AppThemes {
       labelSmall: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.normal,
-        color: Color.fromARGB(155, 255, 255, 255),
+        color: Color.fromARGB(100, 255, 255, 255),
       ),
       titleLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     ),
