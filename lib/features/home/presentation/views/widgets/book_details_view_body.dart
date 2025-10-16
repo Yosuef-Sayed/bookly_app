@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image_item.dart';
 import 'package:flutter/material.dart';
@@ -27,16 +28,8 @@ class BookDetailsViewBody extends StatelessWidget {
                 "Rudyard Kipling",
                 style: Theme.of(context).textTheme.titleSmall,
               ),
-              SizedBox(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 3,
-                children: [
-                  Icon(Icons.star_rounded, color: Colors.amberAccent, size: 21),
-                  Text("4.8", style: Theme.of(context).textTheme.labelMedium),
-                  Text("(2390)", style: Theme.of(context).textTheme.labelSmall),
-                ],
-              ),
+              const SizedBox(),
+              const BookRating(mainAxisAlignment: MainAxisAlignment.center),
             ],
           ),
         ),
