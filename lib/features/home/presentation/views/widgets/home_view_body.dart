@@ -17,7 +17,7 @@ class HomeViewBody extends StatelessWidget {
               const CustomAppBar(),
               const FeaturedListView(),
               Padding(
-                padding: const EdgeInsets.only(left: 30, top: 50, bottom: 20),
+                padding: const EdgeInsets.only(left: 30, top: 20, bottom: 20),
                 child: Text(
                   "Best Seller",
                   style: Theme.of(context).textTheme.titleMedium,
@@ -26,7 +26,12 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        const SliverFillRemaining(child: BestSellerListView()),
+        const SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: BestSellerListView(),
+          ),
+        ),
       ],
     );
   }
