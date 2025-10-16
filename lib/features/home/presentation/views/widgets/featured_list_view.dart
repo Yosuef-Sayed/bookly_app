@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly/features/home/presentation/view/widgets/featured_list_view_item.dart';
+import 'package:bookly/features/home/presentation/views/widgets/featured_list_view_item.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
