@@ -16,11 +16,11 @@ class CustomBookDetailsAppBar extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).pop();
             },
-            icon: Icon(CupertinoIcons.clear, size: 30),
+            icon: const Icon(CupertinoIcons.clear, size: 30),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_cart_outlined, size: 30),
+            icon: const Icon(Icons.shopping_cart_outlined, size: 30),
           ),
         ],
       ),

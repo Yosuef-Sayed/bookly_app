@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
           Image.asset(AssetsData.logo, height: 18),
           IconButton(
             onPressed: () {},
-            icon: Icon(CupertinoIcons.search, size: 30),
+            icon: const Icon(CupertinoIcons.search, size: 30),
           ),
         ],
       ),

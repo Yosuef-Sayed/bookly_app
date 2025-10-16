@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/presentation/views/widgets/book_action_buttons.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image_item.dart';
@@ -33,6 +34,7 @@ class BookDetailsViewBody extends StatelessWidget {
             ],
           ),
         ),
+        const BookActionButtons(),
       ],
     );
   }

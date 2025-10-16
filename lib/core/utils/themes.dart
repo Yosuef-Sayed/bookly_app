@@ -11,7 +11,7 @@ abstract class AppThemes {
         fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
-      bodyLarge: TextStyle(
+      bodyLarge: const TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.normal,
         fontFamily: kGTSectraFine,
@@ -19,7 +19,7 @@ abstract class AppThemes {
       bodyMedium: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        color: Color.fromARGB(160, 255, 255, 255),
+        color: const Color.fromARGB(160, 255, 255, 255),
       ),
       labelLarge: GoogleFonts.montserrat(
         fontSize: 20,
@@ -32,9 +32,9 @@ abstract class AppThemes {
       labelSmall: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.normal,
-        color: Color.fromARGB(100, 255, 255, 255),
+        color: const Color.fromARGB(100, 255, 255, 255),
       ),
-      titleLarge: TextStyle(
+      titleLarge: const TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.w500,
         fontFamily: kGTSectraFine,
@@ -43,7 +43,7 @@ abstract class AppThemes {
         fontSize: 18,
         fontStyle: FontStyle.italic,
         fontWeight: FontWeight.w500,
-        color: Color.fromARGB(160, 255, 255, 255),
+        color: const Color.fromARGB(160, 255, 255, 255),
       ),
     ),
   );
