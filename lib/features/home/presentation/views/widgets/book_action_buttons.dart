@@ -21,10 +21,9 @@ class BookActionButtons extends StatelessWidget {
               color: Colors.white,
               text: Text(
                 "19.99 €",
-                style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w900,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelLarge!.copyWith(color: Colors.black),
               ),
             ),
           ),

@@ -45,6 +45,10 @@ abstract class AppThemes {
         fontWeight: FontWeight.w500,
         color: const Color.fromARGB(160, 255, 255, 255),
       ),
+      bodySmall: GoogleFonts.montserrat(
+        fontSize: 15,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 }
