@@ -34,7 +34,17 @@ abstract class AppThemes {
         fontWeight: FontWeight.normal,
         color: Color.fromARGB(100, 255, 255, 255),
       ),
-      titleLarge: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      titleLarge: TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.w500,
+        fontFamily: kGTSectraFine,
+      ),
+      titleSmall: GoogleFonts.montserrat(
+        fontSize: 18,
+        fontStyle: FontStyle.italic,
+        fontWeight: FontWeight.w500,
+        color: Color.fromARGB(160, 255, 255, 255),
+      ),
     ),
   );
 }
