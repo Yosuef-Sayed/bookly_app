@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly/features/home/presentation/views/widgets/featured_list_view_item.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image_item.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
@@ -17,8 +17,7 @@ class FeaturedListView extends StatelessWidget {
           enlargeCenterPage: true,
           viewportFraction: 0.4,
         ),
-        itemBuilder: (context, index, realIndex) =>
-            const FeaturedListViewItem(),
+        itemBuilder: (context, index, realIndex) => const CustomBookImageItem(),
       ),
     );
   }
