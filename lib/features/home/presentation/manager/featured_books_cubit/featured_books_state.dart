@@ -7,14 +7,14 @@ class FeaturedBooksInit extends FeaturedBooksState {}
 
 class FeaturedBooksLoading extends FeaturedBooksState {}
 
-class FeaturedBooksSuccess extends FeaturedBooksState {
+class FeaturedBooksFail extends FeaturedBooksState {
   final String errorMessage;
 
-  FeaturedBooksSuccess(this.errorMessage);
+  FeaturedBooksFail(this.errorMessage);
 }
 
-class FeaturedBooksFail extends FeaturedBooksState {
+class FeaturedBooksSuccess extends FeaturedBooksState {
   final List<BookEntity> books;
 
-  FeaturedBooksFail(this.books);
+  FeaturedBooksSuccess(this.books);
 }
