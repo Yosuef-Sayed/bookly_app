@@ -7,10 +7,18 @@ class FeaturedBooksInit extends FeaturedBooksState {}
 
 class FeaturedBooksLoading extends FeaturedBooksState {}
 
+class FeaturedBooksPaginationLoading extends FeaturedBooksState {}
+
 class FeaturedBooksFail extends FeaturedBooksState {
   final String errorMessage;
 
   FeaturedBooksFail(this.errorMessage);
+}
+
+class FeaturedBooksPaginationFail extends FeaturedBooksState {
+  final String errorMessage;
+
+  FeaturedBooksPaginationFail(this.errorMessage);
 }
 
 class FeaturedBooksSuccess extends FeaturedBooksState {

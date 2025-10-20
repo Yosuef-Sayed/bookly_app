@@ -17,6 +17,7 @@ class FeaturedListView extends StatefulWidget {
 class _FeaturedListViewState extends State<FeaturedListView> {
   late final CarouselSliderController _carouselController;
   int nextPage = 1;
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -24,12 +25,16 @@ class _FeaturedListViewState extends State<FeaturedListView> {
     super.initState();
   }
 
-  void _fetchMore(int index) {
+  void _fetchMore(int index) async {
     final fetchMorePoint = (widget.books.length * 0.7).floor();
     if (index >= fetchMorePoint) {
-      BlocProvider.of<FeaturedBooksCubit>(
-        context,
-      ).fetchFeaturedBooks(pageNumber: nextPage++);
+      if (!isLoading) {
+        isLoading = true;
+        await BlocProvider.of<FeaturedBooksCubit>(
+          context,
+        ).fetchFeaturedBooks(pageNumber: nextPage++);
+        isLoading = false;
+      }
     }
   }
 
