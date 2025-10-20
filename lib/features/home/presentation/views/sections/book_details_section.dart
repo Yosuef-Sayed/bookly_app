@@ -12,7 +12,10 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         SizedBox(
           height: MediaQuery.of(context).size.height * .3,
-          child: const CustomBookImageItem(image: ""),
+          child: const CustomBookImageItem(
+            image:
+                "http://books.google.com/books/content?id=Wmq1DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 46),
@@ -28,7 +31,11 @@ class BookDetailsSection extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               const SizedBox(),
-              const BookRating(mainAxisAlignment: MainAxisAlignment.center),
+              const BookRating(
+                mainAxisAlignment: MainAxisAlignment.center,
+                rating: 4.8,
+                rateCounter: 2390,
+              ),
             ],
           ),
         ),

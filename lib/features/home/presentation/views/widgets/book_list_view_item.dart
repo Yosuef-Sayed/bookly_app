@@ -1,12 +1,26 @@
 import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
+  const BookListViewItem({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.author,
+    required this.price,
+    required this.rating,
+    required this.rateCounter,
+  });
 
+  final String image;
+  final String title;
+  final String author;
+  final num price;
+  final num rating;
+  final num rateCounter;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,14 +31,11 @@ class BookListViewItem extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 2.5 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage(AssetsData.testImage),
-                    fit: BoxFit.fill,
-                  ),
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.red,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: CachedNetworkImage(
+                  imageUrl: image.replaceFirst("http", "https"),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -37,26 +48,23 @@ class BookListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      "Harry Potter and the Goblet of Fire",
+                      title,
                       style: Theme.of(context).textTheme.bodyLarge,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
                     ),
                   ),
-                  Text(
-                    "J.K. Rowling",
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
+                  Text(author, style: Theme.of(context).textTheme.bodyMedium),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "19.99 €",
+                          "$price €",
                           style: Theme.of(context).textTheme.labelLarge,
                         ),
-                        const BookRating(),
+                        BookRating(rating: rating, rateCounter: rateCounter),
                       ],
                     ),
                   ),
