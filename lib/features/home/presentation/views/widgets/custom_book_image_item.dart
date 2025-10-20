@@ -1,21 +1,19 @@
-import 'package:bookly/core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookImageItem extends StatelessWidget {
-  const CustomBookImageItem({super.key});
+  const CustomBookImageItem({super.key, required this.image});
 
+  final String image;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.7 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage(AssetsData.testImage),
-            fit: BoxFit.fill,
-          ),
-          borderRadius: BorderRadius.circular(16),
-          color: Colors.red,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: CachedNetworkImage(
+          imageUrl: image.replaceFirst("http", "https"),
+          fit: BoxFit.fill,
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:bookly/core/errors/failure.dart';
-import 'package:bookly/features/home/data/data_sources/remote/home_local_data_source.dart';
+import 'package:bookly/features/home/data/data_sources/local/home_local_data_source.dart';
 import 'package:bookly/features/home/data/data_sources/remote/home_remote_data_source.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/domain/repositories/home_repo.dart';
@@ -15,7 +15,9 @@ class HomeRepoImplementation extends HomeRepo {
     required this.homeLocalDataSource,
   });
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() async {
+  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks({
+    int pageNumber = 0,
+  }) async {
     try {
       List<BookEntity> books;
       books = homeLocalDataSource.fetchFeaturedBooks();
