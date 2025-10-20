@@ -20,6 +20,7 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
       endPoint: "volumes?Filtering=free-ebooks&q=programming",
     );
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books, kFeaturedBox);
     return books;
   }
 
@@ -30,7 +31,7 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
     );
     List<BookEntity> books = getBooksList(data);
 
-    saveBooksData(books, kFeaturedBox);
+    saveBooksData(books, kNewestBox);
 
     return books;
   }
@@ -40,9 +41,6 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
     for (var bookMap in data["items"]) {
       books.add(BookModel.fromJson(bookMap));
     }
-
-    saveBooksData(books, kNewestBox);
-
     return books;
   }
 }

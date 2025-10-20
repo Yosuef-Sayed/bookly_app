@@ -20,7 +20,10 @@ class ServerFailure extends Failure {
       case DioExceptionType.badCertificate:
         return ServerFailure("BadCertificate with API Server!");
       case DioExceptionType.badResponse:
-        ServerFailure.fromResponse(e.response!.statusCode, e.response!.data);
+        return ServerFailure.fromResponse(
+          e.response!.statusCode,
+          e.response!.data,
+        );
       case DioExceptionType.cancel:
         return ServerFailure("Request to API Server was canceled!");
       case DioExceptionType.connectionError:
@@ -28,7 +31,6 @@ class ServerFailure extends Failure {
       case DioExceptionType.unknown:
         return ServerFailure("Oops! There's an error, Please try again!");
     }
-    return ServerFailure("There's an error... Please try again!");
   }
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
